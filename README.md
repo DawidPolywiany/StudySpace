@@ -1,2 +1,2 @@
 # StudySpace
-The main goal of the site: to create a convenient and minimalist space for students where they can exchange knowledge, find like-minded people and find useful learning resources.
+Основная цель сайта: создать удобное и минималистичное пространство для студентов, где они могут обмениваться знаниями, находить единомышленников и находить полезные учебные ресурсы.
