@@ -1,0 +1,47 @@
+{
+  "name": "studyspace",
+  "version": "1.0.0",
+  "description": "Основная цель сайта: создать удобное и минималистичное пространство для студентов, где они могут обмениваться знаниями, находить единомышленников и находить полезные учебные ресурсы.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DawidPolywiany/StudySpace.git"
+  },
+  "keywords": [
+    "Социальная",
+    "сеть",
+    "для",
+    "студентов",
+    "Учебные",
+    "ресурсы",
+    "для",
+    "студентов",
+    "Студенческое",
+    "сообщество",
+    "Общение",
+    "для",
+    "студентов",
+    "Совместные",
+    "учебные",
+    "проекты",
+    "Поиск",
+    "одногруппников",
+    "Задачи",
+    "для",
+    "студентов"
+  ],
+  "author": "Dawid Polywiany",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DawidPolywiany/StudySpace/issues"
+  },
+  "homepage": "https://github.com/DawidPolywiany/StudySpace#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mongodb": "^6.13.0"
+  }
+}
