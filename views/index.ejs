@@ -2,10 +2,55 @@
 <html>
     <head>
         <%- include("./partials/head") %>
+        <style>
+            body {
+                background: linear-gradient(to bottom, #161620, #24142E, #3B1830, #802838);
+            }
+            main {
+                height: 100vh;
+                overflow: hidden;
+            }
+            #background-image {
+                position: absolute;
+                width: 100%;
+            }
+            main .glass-block {
+                position: inherit;
+                top: 65px;
+                margin: auto;
+                width: 90%;
+                max-width: 350px;
+            }
+            main .glass-block input {
+                margin: 5px;
+            }
+            main h4 {
+                margin: 5px 10px;
+            }
+        </style>
     </head>
     <body>
-        <header></header>
-        <main>Hello World!</main>
-        <footer></footer>
+        <header><%- include("./partials/header") %></header>
+        <main>
+            <div class="background-image-block">
+                <img id="background-image" src="/images/background.jpg">
+            </div>
+            <div class="glass-block">
+                <h2>Study Space - "Твой уголок для учебы и общения."</h2>
+                <form>
+                    <h4>Login</h4>
+                    <input class="default-input" id="login" placeholder="example@gmail.com"><br><br>
+                    <h4>Password</h4>
+                    <input class="default-input" id="password" type="password" placeholder="enter your password"><br><br><br>
+                    <button>Log in</button>
+                </form>
+            </div>
+            <br>
+            <div class="glass-block">
+                <h4><a href="#">Forgot your password?</a></h4>
+                <h4>New in Study Space? <a href="#">Create an account</a></h4>
+            </div>
+        </main>
+        <footer><%- include("./partials/footer") %></footer>
     </body>
 </html>
