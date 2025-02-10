@@ -12,12 +12,22 @@
         height: 40px;
         margin: 15px 10px;
     }
+    #name {
+        display: flex;
+    }
     #signup {
         position: inherit;
         right: 10px;
         margin: 15px;
     }
 </style>
-<img src="/images/favicon.svg" type="image/svg+xml">
-<h2>Study Space</h2>
-<button id="signup">Sign up</button>
+<a id="name" href="/">
+    <img src="/images/favicon.svg" type="image/svg+xml">
+    <h2>StudySpace</h2>
+</a>
+<button id="signup" onclick="signup_button()">Sign up</button>
+<script>
+    function signup_button() {
+        window.location.href = "/signup";
+    }
+</script>

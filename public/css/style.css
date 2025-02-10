@@ -29,6 +29,9 @@ button {
     border: none;
     box-shadow: 5px 5px 10px #0009;
 }
+summary {
+    list-style: none;
+}
 .default-input {
     width: 220px;
     padding: 7px 20px;

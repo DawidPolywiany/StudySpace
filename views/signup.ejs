@@ -24,12 +24,16 @@
                 margin: auto;
                 width: 80%;
                 max-width: 350px;
+                text-align: left;
             }
             main .glass-block input {
                 margin: 5px;
             }
             main h4 {
                 margin: 5px 10px;
+            }
+            #name-area input {
+                width: 80px;
             }
         </style>
     </head>
@@ -40,20 +44,25 @@
                 <img id="background-image" src="/images/background.jpg">
             </div>
             <div class="glass-block">
-                <h2>StudySpace - "Твой уголок для учебы и общения."</h2>
+                <h2>Регистрация</h2>
                 <form>
-                    <h4>Login</h4>
-                    <input class="default-input" id="login" placeholder="example@gmail.com"><br><br>
+                    <h4>Email</h4>
+                    <input class="default-input" id="login" placeholder="email"><br>
                     <h4>Password</h4>
-                    <input class="default-input" id="password" type="password" placeholder="enter your password"><br><br><br>
-                    <button>Log in</button>
+                    <input class="default-input" id="password" type="password" placeholder="enter your password"><br><br>
+
+                    <h4>User name</h4>
+                    <input class="default-input" id="login" placeholder="username"><br>
+                    <h4>First and last name</h4>
+                    <table id="name-area">
+                        <tr>
+                            <td><input class="default-input" id="login" placeholder="name"></td>
+                            <td><input class="default-input" id="login" placeholder="last name"></td>
+                        </tr>
+                    </table><br><br>
+                    <button>Sign up</button>
                 </form>
-            </div>
-            <br>
-            <div class="glass-block">
-                <h4><a href="#">Forgot your password?</a></h4>
-                <h4>New in StudySpace? <a href="/signup">Create an account</a></h4>
-            </div>
+            </div><br>
         </main>
         <footer><%- include("./partials/footer") %></footer>
     </body>
