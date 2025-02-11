@@ -10,6 +10,7 @@ _app.use(express.static("public"));
 _app.use(require("./routes/main"));
 _app.use("/", require("./routes/index"));
 _app.use("/signup", require("./routes/signup"));
+_app.use("/document", require("./routes/about"));
 
 //запуск сервера
 try {

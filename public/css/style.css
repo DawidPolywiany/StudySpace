@@ -8,6 +8,7 @@ main {
     position: relative;
     top: 65px;
     padding-bottom: 100px;
+    overflow: hidden;
 }
 a {
     text-decoration: none;
@@ -18,6 +19,7 @@ h2, h3 {
     text-shadow: 5px 5px 10px #0009;
 }
 h4, p {
+    line-height: 23px;
     color: #F8F7D8;
 }
 button {
@@ -31,6 +33,10 @@ button {
 }
 summary {
     list-style: none;
+}
+.decorated-body {
+    background: linear-gradient(to bottom, #161620, #24142E, #3B1830, #802838);
+    background-repeat: no-repeat;
 }
 .default-input {
     width: 220px;

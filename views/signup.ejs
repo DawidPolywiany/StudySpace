@@ -3,21 +3,6 @@
     <head>
         <%- include("./partials/head") %>
         <style>
-            body {
-                background: linear-gradient(to bottom, #161620, #24142E, #3B1830, #802838);
-            }
-            main {
-                position: relative;
-                overflow: hidden;
-            }
-            #background-image-block {
-                position: absolute;
-                height: 100%;
-            }
-            #background-image {
-                position: absolute;
-                width: 100%;
-            }
             main .glass-block {
                 position: inherit;
                 top: 65px;
@@ -37,14 +22,12 @@
             }
         </style>
     </head>
-    <body>
+    <body class="decorated-body">
         <header><%- include("./partials/header") %></header>
         <main>
-            <div class="background-image-block">
-                <img id="background-image" src="/images/background.jpg">
-            </div>
+            <%- include("./partials/background-image") %>
             <div class="glass-block">
-                <h2>Регистрация</h2>
+                <h2>Registration</h2>
                 <form>
                     <h4>Email</h4>
                     <input class="default-input" id="login" placeholder="email"><br>
