@@ -1,7 +1,7 @@
 module.exports = (req, res) => {
-    res.render("about", Object.assign({},
+    res.render("application", Object.assign({},
         {meta:{
-            title:"About us",
+            title:"StudySpace",
             description:""
         }}
     ));

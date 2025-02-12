@@ -1,6 +1,6 @@
 const express = require("express");
 const route = express.Router();
 
-route.get("/", require("../controllers/about"));
+route.get("/", require("../controllers/application"));
 
 module.exports = route;
