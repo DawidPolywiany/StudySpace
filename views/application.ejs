@@ -6,32 +6,149 @@
             /* header */
             header {
                 position: fixed;
-                width: 100%;
-                height: 100px;
-                display: flex;
-                background: linear-gradient(to bottom, #161620, #161620, #161620, #16162000);
-                padding: 0 25px;
                 z-index: 1000;
             }
-            header img {
+            #chat-name-block {
+                position: fixed;
+                right: 0;
+                padding: 0;
+                width: calc(100vw - 62px);
+                border: none;
+            }
+            #chat-name {
+                display: flex;
+                flex-direction: row;
+            }
+            #chat-name img {
                 margin: 15px 10px;
                 height: 40px;
                 border-radius: 50px;
+            }
+            /*Боковая панель*/
+            #chats {
+                position: fixed;
+                top: 0;
+                height: 100vh;
+                width: 60px;
+                background-color: #232333;
+                transition: all 0.3s ease;
+            }
+            #chats:hover {
+                width: 350px;
+            }
+            #chats ul {
+                padding: 0px;
+                list-style: none;
+            }
+            #chats li {
+                display: flex;
+            }
+            #chats img {
+                margin: 10px;
+                height: 40px;
+                border-radius: 50px;
+            }
+            #chats h3 {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-right: 20px;
+            }
+            .action-chat {
+                border: 1px solid #fff;
+                border-radius: 5px;
+            }
+            /*main*/
+            main {
+                position: fixed;
+                right: 0;
+                width: calc(100vw - 82px);
+                height: calc(100vh - 65px);
+                padding: 0;
+            }
+            /*footer*/
+            footer.glass-block {
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                padding: 10px;
+                width: calc(100vw - 82px);
+            }
+            #send-block {
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+            }
+            #send-block input {
+                width: calc(70vw - 82px);
+                margin: 0 10px;
+            }
+            #send-block button {
+                width: 45px;
+                height: 45px;
+                padding: 10px;
+            }
+            #send-block svg {
+                width: 25px;
+                height: 25px;
+                fill: #fff;
+            }
+            /* */
+            @media (min-aspect-ratio: 3/2) {
+                #chats {
+                    width: 350px;
+                }
+                main {
+                    width: calc(100vw - 372px);
+                }
+                footer.glass-block {
+                    width: calc(100vw - 372px);
+                }
+                #send-block input {
+                    width: calc(70vw - 372px);
+                    margin: 0 10px;
+                }
             }
         </style>
     </head>
     <body>
         <header>
-            <div id="chat-name">
-                <img src="/images/admin-icon.jpeg">
-                <h2>My chat</h2>
+            <div id="chat-name-block" class="glass-block">
+                <div id="chat-name">
+                    <img src="/images/admin-icon.jpeg">
+                    <h2>My chat</h2>
+                </div>
             </div>
+            <nav id="chats">
+                <ul>
+                    <li class="action-chat">
+                        <img src="/images/admin-icon.jpeg">
+                        <h3>Chat name</h3>
+                    </li>
+                    <li>
+                        <img src="/images/admin-icon.jpeg">
+                        <h3>Chat name</h3>
+                    </li>
+                    <li>
+                        <img src="/images/admin-icon.jpeg">
+                        <h3>Chat name</h3>
+                    </li>
+                    <li>
+                        <img src="/images/admin-icon.jpeg">
+                        <h3>Chat name</h3>
+                    </li>
+                </ul>
+            </nav>
         </header>
         <main>
-            
+            <div class="your-sms">test</div>
+            <div class="my-sms"></div>
         </main>
-        <footer>
-            
+        <footer class="glass-block">
+            <div id="send-block">
+                <input class="default-input" placeholder="input message">
+                <button><%- include("../public/icons/send-ico.ejs") %></button>
+            </div>
         </footer>
     </body>
 </html>

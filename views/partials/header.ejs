@@ -1,19 +1,21 @@
 <style>
     header {
         position: fixed;
-        width: 100%;
-        height: 100px;
+        width: calc(100vw - 52px);
         display: flex;
-        background: linear-gradient(to bottom, #161620, #161620, #161620, #16162000);
+        background-color: #0009;
+        backdrop-filter: blur(5px);
         padding: 0 25px;
         z-index: 1000;
-    }
-    header img {
-        height: 40px;
-        margin: 15px 10px;
+        border: 1px solid #fff;
+        border-radius: 5px;
     }
     #name {
         display: flex;
+    }
+    #name img {
+        height: 40px;
+        margin: 15px 10px;
     }
     #signup {
         position: inherit;
@@ -22,7 +24,7 @@
     }
 </style>
 <a id="name" href="/">
-    <img src="/images/favicon.svg" type="image/svg+xml">
+    <img id="header-icon" src="/images/favicon.svg" type="image/svg+xml">
     <h2>StudySpace</h2>
 </a>
 <button id="signup" onclick="signup_button()">Sign up</button>
