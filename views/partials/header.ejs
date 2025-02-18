@@ -4,7 +4,7 @@
         width: calc(100vw - 52px);
         display: flex;
         background-color: #0009;
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(3px);
         padding: 0 25px;
         z-index: 1000;
         border: 1px solid #fff;
@@ -27,7 +27,7 @@
     <img id="header-icon" src="/images/favicon.svg" type="image/svg+xml">
     <h2>StudySpace</h2>
 </a>
-<button id="signup" onclick="signup_button()">Sign up</button>
+<button class="default-block" id="signup" onclick="signup_button()">Sign up</button>
 <script>
     function signup_button() {
         window.location.href = "/signup";

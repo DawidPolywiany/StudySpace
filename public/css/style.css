@@ -23,15 +23,6 @@ h4, p {
     line-height: 23px;
     color: #F8F7D8;
 }
-button {
-    padding: 5px 30px;
-    color: #fff;
-    font-size: 18px;
-    background-color: #3AB559;
-    border-radius: 50px;
-    border: none;
-    box-shadow: 5px 5px 10px #0009;
-}
 summary {
     list-style: none;
 }
@@ -51,13 +42,12 @@ summary {
     box-shadow: 5px 5px 10px #0009;
 }
 .default-block {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 35px;
-    background-color: #D14E3A;
-    border-radius: 5px;
-    border: 3px solid #D83A2F;
+    padding: 5px 30px;
+    color: #fff;
+    font-size: 18px;
+    background-color: #3AB559;
+    border-radius: 15px;
+    border: none;
     box-shadow: 5px 5px 10px #0009;
 }
 .glass-block {

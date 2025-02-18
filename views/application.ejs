@@ -3,6 +3,10 @@
     <head>
         <%- include("./partials/head") %>
         <style>
+            .glass-block {
+                backdrop-filter: none;
+                background-color: #07070a;
+            }
             /* header */
             header {
                 position: fixed;
@@ -24,6 +28,7 @@
                 height: 40px;
                 border-radius: 50px;
             }
+
             /*Боковая панель*/
             #chats {
                 position: fixed;
@@ -58,14 +63,30 @@
                 border: 1px solid #fff;
                 border-radius: 5px;
             }
+
             /*main*/
             main {
                 position: fixed;
                 right: 0;
-                width: calc(100vw - 82px);
-                height: calc(100vh - 65px);
-                padding: 0;
+                width: calc(100vw - 70px);
+                height: calc(100vh - 150px);
+                padding: 10px 0;
+                overflow-y: overlay;
             }
+            .self-message, .your-message {
+                position: relative;
+                left: 0;
+                width: 200px;
+                margin: 10px;
+                word-wrap: break-word;
+                box-shadow: none;
+                background-color: #3b884e;
+            }
+            .self-message {
+                margin-left: auto;
+                background-color: #3AB559;
+            }
+
             /*footer*/
             footer.glass-block {
                 position: fixed;
@@ -80,8 +101,9 @@
                 flex-direction: row;
             }
             #send-block input {
-                width: calc(70vw - 82px);
+                width: calc(75vw - 82px);
                 margin: 0 10px;
+                border-radius: 100px;
             }
             #send-block button {
                 width: 45px;
@@ -93,13 +115,13 @@
                 height: 25px;
                 fill: #fff;
             }
-            /* */
+            /* media blocks */
             @media (min-aspect-ratio: 3/2) {
                 #chats {
                     width: 350px;
                 }
                 main {
-                    width: calc(100vw - 372px);
+                    width: calc(100vw - 360px);
                 }
                 footer.glass-block {
                     width: calc(100vw - 372px);
@@ -141,13 +163,19 @@
             </nav>
         </header>
         <main>
-            <div class="your-sms">test</div>
-            <div class="my-sms"></div>
+            <div id="messages">
+                <div class="default-block your-message">Hello!</div>
+                <div class="default-block self-message">Hi! How are you?</div>
+                <div class="default-block self-message">sdfj bfwjfbwjfbwjhhhhhh hhhhhhh h hhhhhhh hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</div>
+                <div class="default-block your-message">sdfj bfwjfbwjfbwjhhhhhh hhhhhhh h hhhhhhh hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</div>
+                <div class="default-block your-message">sdfj bfwjfbwjfbwjhhhhhh hhhhhhh h hhhhhhh hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</div>
+                <div class="default-block self-message">sdfj bfwjfbwjfbwjhhhhhh hhhhhhh h hhhhhhh hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</div>
+            </div>
         </main>
         <footer class="glass-block">
             <div id="send-block">
                 <input class="default-input" placeholder="input message">
-                <button><%- include("../public/icons/send-ico.ejs") %></button>
+                <button class="default-block"><%- include("../public/icons/send-ico.ejs") %></button>
             </div>
         </footer>
     </body>
