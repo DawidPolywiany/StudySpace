@@ -14,6 +14,8 @@ const options = {
 //ejs параметры
 _app.set("view engine", "ejs");
 _app.use(express.static("public"));
+_app.use(express.json());
+//_app.use(express.urlencoded({extended:true}));
 
 //настройка session
 _app.use(session({

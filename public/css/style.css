@@ -58,7 +58,7 @@ summary {
     padding: 35px;
     background-color: #0007;
     backdrop-filter: blur(3px);
-    border-radius: 5px;
+    border-radius: 15px;
     border: 1px solid #fff;
     box-shadow: 10px 10px 20px #0009;
 }

@@ -19,6 +19,31 @@
             main h4 {
                 margin: 5px 10px;
             }
+            #activation-block {
+                max-width: 250px;
+                text-align: center;
+                padding: 35px;
+                background-color: #000;
+                border-radius: 15px;
+                border: 1px solid #fff;
+                overflow: hidden;
+            }
+            #activation-block input {
+                max-width: 150px;
+            }
+            .bg {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 0;
+                background-color: #000c;
+                z-index: 1000;
+                backdrop-filter: blur(5px);
+            }
+            .bg-active {
+                height: 100vh;
+            }
         </style>
     </head>
     <body class="decorated-body">
@@ -27,20 +52,55 @@
             <%- include("./partials/background-image") %>
             <div class="glass-block">
                 <h2>StudySpace - <h3>"Your corner for study and communication."</h3></h2>
-                <form>
+                <div>
                     <h4>Login</h4>
-                    <input class="default-input" placeholder="example@gmail.com"><br><br>
+                    <input id="user-email" class="default-input" placeholder="example@gmail.com"><br><br>
                     <h4>Password</h4>
-                    <input class="default-input" type="password" placeholder="enter your password"><br><br><br>
-                    <button class="default-block" type="submit">Log in</button>
-                </form>
+                    <input id="user-password" class="default-input" type="password" placeholder="enter your password"><br><br><br>
+                    <button class="default-block" onclick="send_form()">Log in</button>
+                </div>
             </div>
             <br>
             <div class="glass-block">
                 <h4><a href="/forgot-password">Forgot your password?</a></h4>
                 <h4>New in StudySpace? <a href="/signup">Create an account</a></h4>
             </div>
+            <div id="bg" class="bg">
+                <dialog id="activation-block">
+                    <h4>Enter your activation code<br>(sended on your email):</h4><br><br>
+                    <input id="activation-code" class="default-input" placeholder="xxx-xxx"><br><br>
+                    <button class="default-block" onclick="send_code()">Ok</button>
+                </dialog>
+            </div>
         </main>
         <footer><%- include("./partials/footer") %></footer>
     </body>
+    <script>
+        const _email = document.getElementById("user-email");
+        const _password = document.getElementById("user-password");
+        const _code = document.getElementById("activation-code");
+
+        async function send_form() {
+            const _response = await fetch("/authentification", {
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({email:_email.value, password:_password.value})
+            });
+            const _data = await _response.json();
+            if (_data.sended) {
+                document.getElementById("bg").classList.add("bg-active");
+                document.getElementById("activation-block").showModal();
+            }
+        }
+
+        async function send_code() {
+            const _response = await fetch("/authentification", {
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({email:_email.value, password:_password.value, code:_code.value})
+            });
+            const _data = await _response.json();
+            if (_data.confirm) window.location.href = "/application";
+        }
+    </script>
 </html>
