@@ -44,6 +44,20 @@
             .bg-active {
                 height: 100vh;
             }
+            .error-text {
+                position: fixed;
+                top: 75px;
+                left: 50%;
+                transform: translate(-50%, 0);
+                opacity: 0;
+                z-index: 1000;
+            }
+            .error-text-active {
+                opacity: 1;
+            }
+            #incorrect-code {
+                top: 110px;
+            }
         </style>
     </head>
     <body class="decorated-body">
@@ -68,10 +82,12 @@
             <div id="bg" class="bg">
                 <dialog id="activation-block">
                     <h4>Enter your activation code<br>(sended on your email):</h4><br><br>
-                    <input id="activation-code" class="default-input" placeholder="xxx-xxx"><br><br>
+                    <input id="activation-code" class="default-input" placeholder="xxx-xxx" autocomplete="off"><br><br>
                     <button class="default-block" onclick="send_code()">Ok</button>
                 </dialog>
             </div>
+            <h4 id="incorrect-log" class="error-text">Incorrect username or password.</h4>
+            <h4 id="incorrect-code" class="error-text">Incorrect activation code.</h4>
         </main>
         <footer><%- include("./partials/footer") %></footer>
     </body>
@@ -79,18 +95,24 @@
         const _email = document.getElementById("user-email");
         const _password = document.getElementById("user-password");
         const _code = document.getElementById("activation-code");
+        const _incorrect_log = document.getElementById("incorrect-log");
+        const _incorrect_code = document.getElementById("incorrect-code");
 
         async function send_form() {
             const _response = await fetch("/authentification", {
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
-                body:JSON.stringify({email:_email.value, password:_password.value})
+                body:JSON.stringify({email:_email.value, password:_password.value}),
+                credentials:"include"
             });
             const _data = await _response.json();
-            if (_data.sended) {
+            if (_data.confirm) {
+                window.location.href = "/application";
+            } else if (_data.sended) {
                 document.getElementById("bg").classList.add("bg-active");
+                _incorrect_log.classList.remove("error-text-active");
                 document.getElementById("activation-block").showModal();
-            }
+            } else _incorrect_log.classList.add("error-text-active");
         }
 
         async function send_code() {
@@ -100,7 +122,11 @@
                 body:JSON.stringify({email:_email.value, password:_password.value, code:_code.value})
             });
             const _data = await _response.json();
-            if (_data.confirm) window.location.href = "/application";
+            if (_data.confirm) {
+                window.location.href = "/application";
+            } else {
+                _incorrect_code.classList.add("error-text-active");
+            }
         }
     </script>
 </html>

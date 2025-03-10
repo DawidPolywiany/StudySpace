@@ -62,3 +62,13 @@ summary {
     border: 1px solid #fff;
     box-shadow: 10px 10px 20px #0009;
 }
+.error-text {
+    text-align: center;
+    padding: 5px 25px;
+    background-color: #D83A2F90;
+    backdrop-filter: blur(3px);
+    border-radius: 15px;
+    border: 1px solid #6d1d17;
+    text-wrap: nowrap;
+    transition: opacity 0.1s linear;
+}
