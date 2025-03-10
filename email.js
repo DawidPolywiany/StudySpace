@@ -21,7 +21,7 @@ module.exports = async (to, subject, html) => {
         });
         */
         console.log(html);
-        console.log("Успешно отправленно email:"/*, info.accepted*/);
+        console.log("Успешно отправленно email:", to);
     } catch (_err) {
         console.log("Ошибка при отправке email:", _err);
     }

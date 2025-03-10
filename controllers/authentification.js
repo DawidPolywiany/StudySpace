@@ -31,6 +31,6 @@ module.exports = async (req, res) => {
             res.json({sended:false});
         }
     } catch (_err) {
-        console.log("Ошибка при попытке найти пользователя", _err);
+        console.log("ошибка при попытке найти пользователя", _err);
     }
 }
